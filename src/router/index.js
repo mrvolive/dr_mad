@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import VirusesView from '../views/VirusesView.vue'
+import ShopLoginView from '../views/ShopLoginView.vue'
+import BankAccountView from '../views/BankAccountView.vue'
 
 Vue.use(VueRouter)
 
@@ -13,14 +15,12 @@ const routes = [
   {
     path: '/shop/login',
     name: 'shoplogin',
-    // import dynamique du composant, plutôt qu'en début de fichier, comme la route prédécente.
-    component: () => import('../views/ShopLoginView.vue')
+    component: ShopLoginView
   },
   {
     path: '/bank/account',
     name: 'bankaccount',
-    // import dynamique du composant, plutôt qu'en début de fichier, comme la route prédécente.
-    component: () => import('../views/BankAccountView.vue')
+    component: BankAccountView
   }
 
 ]

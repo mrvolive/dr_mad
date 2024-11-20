@@ -36,7 +36,7 @@ export default new Vuex.Store({
   // actions = fonctions asynchrone pour mettre à jour le state, en faisant appel aux mutations, via la fonction commit()
   actions: {
     async shopLogin({commit}, data) {
-      console.log('login');
+      console.log(data);
       let response = await ShopService.shopLogin(data)
       if (response.error === 0) {
         commit('updateShopUser', response.data)

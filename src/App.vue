@@ -1,10 +1,13 @@
 <template>
-  <div id="app">
-    <NavBar :titles="titles" @menu-clicked="goTo($event)"></NavBar>
+  <div id="app" class="d-flex flex-column gap-3">
+    <NavBar :navItems="navItems" @menu-clicked="goTo($event)"></NavBar>
 
-    <h1>Welcome to DrMad app</h1>
 
-    <router-view/>
+    <div class="container d-flex flex-column gap-3">
+      <h1>Welcome to DrMad app</h1>
+
+      <router-view/>
+    </div>
   </div>
 </template>
 
@@ -16,21 +19,32 @@ export default {
   name: 'App',
   components: {NavBar},
   data: () => ({
-    titles: [ {text:'Virus', color: 'blue'},
-      {text:'Compte bancaire', color: 'red'},
-      {text:'Login', color: 'green'},
+    navItems: [
+      {
+        text: 'Virus',
+      },
+      {
+        text: 'Compte bancaire',
+      },
+      {
+        text: 'Login',
+      },
     ],
     currentIndex: -1
   }),
   methods: {
     goTo(index) {
-      if (index == 0) {
+      if (this.currentIndex === index) {
+        return
+      }
+
+      this.currentIndex = index
+
+      if (index === 0) {
         this.$router.push('/shop/items')
-      }
-      else if (index == 1) {
+      } else if (index === 1) {
         this.$router.push('/bank/account')
-      }
-      else if (index == 2) {
+      } else if (index === 2) {
         this.$router.push('/shop/login')
       }
     }
