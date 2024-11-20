@@ -1,32 +1,39 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
+    <NavBar :titles="titles" @menu-clicked="goTo($event)"></NavBar>
+
+    <h1>Welcome to DrMad app</h1>
+
     <router-view/>
   </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
 
-nav {
-  padding: 30px;
-}
+import NavBar from "@/components/NavBar";
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+export default {
+  name: 'App',
+  components: {NavBar},
+  data: () => ({
+    titles: [ {text:'Virus', color: 'blue'},
+      {text:'Compte bancaire', color: 'red'},
+      {text:'Login', color: 'green'},
+    ],
+    currentIndex: -1
+  }),
+  methods: {
+    goTo(index) {
+      if (index == 0) {
+        this.$router.push('/shop/items')
+      }
+      else if (index == 1) {
+        this.$router.push('/bank/account')
+      }
+      else if (index == 2) {
+        this.$router.push('/shop/login')
+      }
+    }
+  },
+};
+</script>
