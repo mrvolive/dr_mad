@@ -10,12 +10,12 @@
       <div class="collapse navbar-collapse" id="navbarToggler">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li v-for="(link, index) in navItems" :key="index" class="nav-item">
-            <a
-                @click="$emit('menu-clicked', index)"
+            <router-link
+                :to="{name: link.pathName}"
                 class="nav-link"
             >
               {{link.text}}
-            </a>
+            </router-link>
           </li>
         </ul>
       </div>

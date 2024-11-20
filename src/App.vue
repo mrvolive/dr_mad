@@ -1,12 +1,12 @@
 <template>
   <div id="app" class="d-flex flex-column gap-3">
-    <NavBar :navItems="navItems" @menu-clicked="goTo($event)"></NavBar>
+    <NavBar :navItems="navItems" />
 
 
     <div class="container d-flex flex-column gap-3">
       <h1>Welcome to DrMad app</h1>
 
-      <router-view/>
+      <router-view />
     </div>
   </div>
 </template>
@@ -22,32 +22,17 @@ export default {
     navItems: [
       {
         text: 'Virus',
+        pathName: 'shopitems',
       },
       {
         text: 'Compte bancaire',
+        pathName: 'bankaccount',
       },
       {
         text: 'Login',
+        pathName: 'shoplogin',
       },
     ],
-    currentIndex: -1
   }),
-  methods: {
-    goTo(index) {
-      if (this.currentIndex === index) {
-        return
-      }
-
-      this.currentIndex = index
-
-      if (index === 0) {
-        this.$router.push('/shop/items')
-      } else if (index === 1) {
-        this.$router.push('/bank/account')
-      } else if (index === 2) {
-        this.$router.push('/shop/login')
-      }
-    }
-  },
 };
 </script>
