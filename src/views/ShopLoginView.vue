@@ -3,7 +3,7 @@
     <h1>Login</h1>
 
     <div class="mb-3">
-      <label for="login" class="form-label">UserName</label>
+      <label for="login" class="form-label">Username</label>
       <input type="text" class="form-control" id="login" v-model="login">
     </div>
 
