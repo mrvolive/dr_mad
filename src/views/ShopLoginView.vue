@@ -1,7 +1,8 @@
 <template>
   <div class="d-flex flex-column gap-3">
     <h1>Login</h1>
-
+    <router-view name="shoplogin"></router-view>
+    
     <div class="mb-3">
       <label for="login" class="form-label">Username</label>
       <input type="text" class="form-control" id="login" v-model="login">
