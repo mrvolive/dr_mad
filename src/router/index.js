@@ -1,11 +1,14 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-
 import HomeView from "@/views/HomeView.vue";
 import VirusesView from '@/views/VirusesView.vue'
 import ShopLoginView from '@/views/ShopLoginView.vue'
 import BankAccountView from '@/views/BankAccountView.vue'
 import ShopView from "@/views/ShopView.vue";
+import ShopHome from "@/views/ShopHome.vue";
+import ShopBuy from "@/views/ShopBuy.vue"
+import ShopPay from "@/views/ShopPay.vue"
+import ShopOrders from "@/views/ShopOrders.vue"
 
 Vue.use(VueRouter)
 
@@ -14,10 +17,9 @@ const routes = [
     path: '/',
     name: 'home',
     components: {
-      left: BankAccountView,
-      center: VirusesView,
-      right: ShopLoginView,
-      bottom: ShopView,
+      left: HomeView,
+      center: HomeView,
+      right: HomeView
     },
   },
   {
@@ -28,29 +30,40 @@ const routes = [
     },
     children: [
       {
-        path: '/shop/home',
-        name: 'shopHome',
-        component: ShopLoginView
+       path: '/shop/home',
+        name: 'shophome',
+        components: {
+          center: ShopHome
+        },
+        alias: '/shop'
       },
       {
         path: '/shop/login',
-        name: 'shopLogin',
-        component: ShopLoginView
+        name: 'shoplogin',
+        components: {
+          center: ShopLoginView
+        }
       },
       {
         path: '/shop/buy',
-        name: 'shopBuy',
-        component: ShopLoginView
+        name: 'shopbuy',
+        components: {
+          center: ShopBuy
+        }
       },
       {
         path: '/shop/pay/:orderId',
-        name: 'shopPay',
-        component: ShopLoginView
+        name: 'shoppay',
+        components: {
+          center: ShopPay
+        }
       },
       {
         path: '/shop/orders',
-        name: 'shopOrders',
-        component: ShopLoginView
+        name: 'shoporders',
+        components: {
+          center: ShopOrders
+        }
       },
     ]
   },
@@ -58,13 +71,6 @@ const routes = [
     path: '/shop/items',
     name: 'shopitems',
     component: VirusesView
-  },
-  {
-    path: '/shop/login',
-    name: 'shoplogin',
-    components: {
-      center: ShopLoginView,
-    }
   },
   {
     path: '/bank/account',
