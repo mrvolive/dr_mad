@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import HomeView from "@/views/HomeView.vue";
 import VirusesView from '../views/VirusesView.vue'
 import ShopLoginView from '../views/ShopLoginView.vue'
 import BankAccountView from '../views/BankAccountView.vue'
@@ -7,6 +8,11 @@ import BankAccountView from '../views/BankAccountView.vue'
 Vue.use(VueRouter)
 
 const routes = [
+  {
+    path: '/',
+    name: 'home',
+    component: HomeView
+  },
   {
     path: '/shop/items',
     name: 'shopitems',

@@ -4,8 +4,6 @@
 
 
     <div class="container d-flex flex-column gap-3">
-      <h1>Welcome to DrMad app</h1>
-
       <router-view />
     </div>
   </div>

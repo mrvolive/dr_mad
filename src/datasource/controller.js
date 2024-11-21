@@ -41,10 +41,13 @@ function getAccountAmount(number) {
 
 function getAccountTransactions(number) {
     if (!number) return {error: 1, status: 404, data: 'aucun numéro de compte bancaire fourni'}
+
     let account = bankaccounts.find(a => a.number === number)
+
     if (!account) return {error: 1, status: 404, data: 'numéro de compte bancaire incorrect'}
-    // récupérer les transaction grâce à l'_id du compte
+
     let trans = transactions.filter(t => t.account === account._id)
+
     return {error: 0, status: 200, data: trans}
 }
 
