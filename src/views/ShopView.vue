@@ -4,3 +4,10 @@
     <router-view name="shopmain"></router-view>
   </div>
 </template>
+
+<script>
+
+export default {
+  name: "ShopView",
+}
+</script>

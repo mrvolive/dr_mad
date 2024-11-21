@@ -4,6 +4,7 @@ import HomeView from "@/views/HomeView.vue";
 import VirusesView from '@/views/VirusesView.vue'
 import ShopLoginView from '@/views/ShopLoginView.vue'
 import BankAccountView from '@/views/BankAccountView.vue'
+import ShopView from "@/views/ShopView.vue";
 
 Vue.use(VueRouter)
 
@@ -16,6 +17,40 @@ const routes = [
       center: HomeView,
       right: HomeView
     },
+  },
+  {
+    path: '/shop',
+    name: 'shopmain',
+    components:{
+      left: ShopView,
+    },
+    children: [
+      {
+        path: '/shop/home',
+        name: 'shopHome',
+        component: ShopLoginView
+      },
+      {
+        path: '/shop/login',
+        name: 'shopLogin',
+        component: ShopLoginView
+      },
+      {
+        path: '/shop/buy',
+        name: 'shopBuy',
+        component: ShopLoginView
+      },
+      {
+        path: '/shop/pay/:orderId',
+        name: 'shopPay',
+        component: ShopLoginView
+      },
+      {
+        path: '/shop/orders',
+        name: 'shopOrders',
+        component: ShopLoginView
+      },
+    ]
   },
   {
     path: '/shop/items',
