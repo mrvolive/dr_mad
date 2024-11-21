@@ -26,43 +26,43 @@ const routes = [
     path: '/shop',
     name: 'shopmain',
     components:{
-      left: ShopView,
+      center: ShopView,
     },
     children: [
       {
-       path: '/shop/home',
+       path: 'home',
         name: 'shophome',
         components: {
-          center: ShopHome
+          right: ShopHome
         },
-        alias: '/shop'
+        alias:'/shop'
       },
       {
-        path: '/shop/login',
+        path: 'login',
         name: 'shoplogin',
         components: {
-          center: ShopLoginView
+          right: ShopLoginView,
         }
       },
       {
-        path: '/shop/buy',
+        path: 'buy',
         name: 'shopbuy',
         components: {
-          center: ShopBuy
+          right: ShopBuy
         }
       },
       {
-        path: '/shop/pay/:orderId',
+        path: 'pay/:orderId',
         name: 'shoppay',
         components: {
-          center: ShopPay
+          right: ShopPay
         }
       },
       {
-        path: '/shop/orders',
+        path: 'orders',
         name: 'shoporders',
         components: {
-          center: ShopOrders
+          right: ShopOrders
         }
       },
     ]

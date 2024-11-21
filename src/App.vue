@@ -2,7 +2,9 @@
   <div id="app" class="d-flex flex-column gap-3">
     <NavBar :navItems="navItems"/>
 
-    <component :is="getViewComponent()"/>
+    <div class="container">
+      <router-view name="center" />
+    </div>
   </div>
 </template>
 
