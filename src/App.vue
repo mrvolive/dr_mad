@@ -12,6 +12,7 @@ import NavBar from "@/components/NavBar";
 import {mapActions, mapState} from "vuex";
 import CompleteView from "@/components/views/CompleteView.vue";
 import CenterView from "@/components/views/CenterView.vue";
+import LeftCenterRightViews from "@/components/views/LeftCenterRightViews.vue";
 import LeftAndCenterView from "@/components/views/LeftAndCenterView.vue";
 import RightAndCenterView from "@/components/views/RightAndCenterView.vue";
 import BottomAndCenterView from "@/components/views/BottomAndCenterView.vue";
@@ -22,6 +23,7 @@ export default {
     NavBar,
     CompleteView,
     CenterView,
+    LeftCenterRightViews,
     LeftAndCenterView,
     RightAndCenterView,
     BottomAndCenterView
@@ -52,6 +54,8 @@ export default {
         return 'CompleteView';
       } else if (this.hasCenterView() && !this.hasLeftView() && !this.hasRightView() && !this.hasBottomView()) {
         return 'CenterView';
+      } else if (this.hasLeftView() && this.hasCenterView() && this.hasRightView() && !this.hasBottomView()) {
+        return 'LeftCenterRightViews';
       } else if (this.hasLeftView() && this.hasCenterView() && !this.hasRightView() && !this.hasBottomView()) {
         return 'LeftAndCenterView';
       } else if (this.hasCenterView() && this.hasRightView() && !this.hasLeftView() && !this.hasBottomView()) {
