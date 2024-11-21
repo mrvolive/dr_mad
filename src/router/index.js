@@ -12,9 +12,9 @@ const routes = [
     path: '/',
     name: 'home',
     components: {
-      center: VirusesView,
-      left: BankAccountView,
-      right: ShopLoginView,
+      left: HomeView,
+      center: HomeView,
+      right: HomeView
     },
   },
   {
@@ -25,7 +25,9 @@ const routes = [
   {
     path: '/shop/login',
     name: 'shoplogin',
-    component: ShopLoginView
+    components: {
+      center: ShopLoginView,
+    }
   },
   {
     path: '/bank/account',

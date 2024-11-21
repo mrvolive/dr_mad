@@ -16,23 +16,23 @@
 
     <table v-if="shopUser" class="table table-striped">
       <thead>
-        <tr>
-          <th>id</th>
-          <th>name</th>
-          <th>login</th>
-          <th>email</th>
-          <th>session</th>
-        </tr>
+      <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>login</th>
+        <th>email</th>
+        <th>session</th>
+      </tr>
       </thead>
 
       <tbody>
-        <tr>
-          <td>{{shopUser._id}}</td>
-          <td>{{shopUser.name}}</td>
-          <td>{{shopUser.login}}</td>
-          <td>{{shopUser.email}}</td>
-          <td>{{shopUser.session}}</td>
-        </tr>
+      <tr>
+        <td>{{ shopUser._id }}</td>
+        <td>{{ shopUser.name }}</td>
+        <td>{{ shopUser.login }}</td>
+        <td>{{ shopUser.email }}</td>
+        <td>{{ shopUser.session }}</td>
+      </tr>
       </tbody>
     </table>
   </div>
@@ -50,10 +50,10 @@ export default {
     password: '',
   }),
   computed: {
-    ...mapState('shop',['shopUser'])
+    ...mapState('shop', ['shopUser'])
   },
   methods: {
-    ...mapActions('shop',['shopLogin']),
+    ...mapActions('shop', ['shopLogin']),
   }
 }
 </script>
