@@ -10,7 +10,7 @@
         <router-view name="right" style="width: 20dvw; padding: 0 10px 0 0;" />
       </div>
 
-      <router-view name="bottom" />
+      <router-view name="bottom" style="padding: 0 10px" />
     </div>
   </div>
 </template>
