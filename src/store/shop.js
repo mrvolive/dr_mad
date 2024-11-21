@@ -1,8 +1,9 @@
 import ShopService from '../services/shop.service'
 
-export default ({
+export default {
+  namespaced: true,
   // state = les données centralisées
-  state: () => ({
+  state:() => ({
     viruses: [],
     shopUser: null,
   }),
@@ -17,7 +18,7 @@ export default ({
   },
   // actions = fonctions asynchrone pour mettre à jour le state, en faisant appel aux mutations, via la fonction commit()
   actions: {
-    async shopLogin({commit}, data) {
+    async shopLogin({ commit }, data) {
       console.log(data);
       let response = await ShopService.shopLogin(data)
       if (response.error === 0) {
@@ -27,7 +28,7 @@ export default ({
         console.log(response.data)
       }
     },
-    async getAllViruses({commit}) {
+    async getAllViruses({ commit }) {
       console.log('récupération des viruses');
       let response = await ShopService.getAllViruses()
       if (response.error === 0) {
@@ -38,4 +39,4 @@ export default ({
       }
     }
   }
-})
+}

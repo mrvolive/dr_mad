@@ -1,8 +1,9 @@
 import BankAccountService from '../services/bankaccount.service'
 
-export default ({
+export default {
+  namespaced: true,
   // state = les données centralisées
-  state: () => ({
+  state:()=>({
     accountAmount: 0,
     accountTransactions: [],
     accountNumberError: 0,
@@ -44,7 +45,7 @@ export default ({
         console.log(response.data)
         commit('updateAccountNumberError', -1)
       }
-    },
+    }
   }
-})
+}
 

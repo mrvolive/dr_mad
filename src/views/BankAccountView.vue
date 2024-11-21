@@ -62,15 +62,15 @@ export default {
     number: '',
   }),
   computed: {
-    ...mapState(['accountAmount', 'accountTransactions', 'accountNumberError']),
+    ...mapState('bank',['accountAmount', 'accountTransactions', 'accountNumberError']),
     isAccountNumberValid() {
       const rexp = RegExp('^[A-Za-z0-9]{22}-[0-9]{7}$', 'g')
       return rexp.test(this.number)
     }
   },
   methods: {
-    ...mapActions(['getAccountAmount', 'getAccountTransactions']),
-    ...mapMutations(['updateAccountNumberError']),
+    ...mapActions('bank',['getAccountAmount', 'getAccountTransactions']),
+    ...mapMutations('bank',['updateAccountNumberError']),
     convertDateToDate(date) {
       let d = new Date(date)
       return d.getMonth() + "/" + d.getDate() + "/" + d.getFullYear()

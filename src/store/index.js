@@ -1,13 +1,14 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import shop from './shop'
-import bank from './bank'
 
 Vue.use(Vuex)
+
+import shop from './shop'
+import bank from './bank'
 
 export default new Vuex.Store({
   modules:{
     shop,
     bank
   }
-});
+})

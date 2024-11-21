@@ -86,7 +86,7 @@ export default {
     selected: []
   }),
   computed: {
-    ...mapState(['viruses']),
+    ...mapState('shop',['viruses']),
     filteredViruses() {
       return this.viruses
           .filter(v => !this.filterPriceActive || v.price > this.priceFilter)
@@ -95,7 +95,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions(['getAllViruses']),
+    ...mapActions('shop',['getAllViruses']),
     isSelected(index) {
       return this.selected.includes(index);
     },
