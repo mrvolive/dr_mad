@@ -33,7 +33,7 @@ const routes = [
        path: 'home',
         name: 'shophome',
         components: {
-          right: ShopHome
+          center: ShopHome
         },
         alias:'/shop'
       },
@@ -41,28 +41,28 @@ const routes = [
         path: 'login',
         name: 'shoplogin',
         components: {
-          right: ShopLoginView,
+          center: ShopLoginView,
         }
       },
       {
         path: 'buy',
         name: 'shopbuy',
         components: {
-          right: ShopBuy
+          center: ShopBuy
         }
       },
       {
         path: 'pay/:orderId',
         name: 'shoppay',
         components: {
-          right: ShopPay
+          center: ShopPay
         }
       },
       {
         path: 'orders',
         name: 'shoporders',
         components: {
-          right: ShopOrders
+          center: ShopOrders
         }
       },
     ]

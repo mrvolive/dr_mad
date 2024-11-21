@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Boutique</h1>
-    <router-view name="right" />
+    <router-view name="center" />
   </div>
 </template>
 
