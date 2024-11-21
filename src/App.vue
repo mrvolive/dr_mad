@@ -2,16 +2,7 @@
   <div id="app" class="d-flex flex-column gap-3">
     <NavBar :navItems="navItems"/>
 
-
-    <div class="d-flex flex-column gap-5">
-      <div class="d-flex justify-content-between gap-5">
-        <router-view name="left" style="width: 20dvw; padding: 0 0 0 10px;"/>
-        <router-view name="center" style="width: 60dvw;"/>
-        <router-view name="right" style="width: 20dvw; padding: 0 10px 0 0;"/>
-      </div>
-
-      <router-view name="bottom" style="padding: 0 10px; width: 100%;"/>
-    </div>
+    <component :is="getViewComponent()"/>
   </div>
 </template>
 
@@ -19,15 +10,30 @@
 
 import NavBar from "@/components/NavBar";
 import {mapActions, mapState} from "vuex";
+import CompleteView from "@/components/views/CompleteView.vue";
+import CenterView from "@/components/views/CenterView.vue";
+import LeftAndCenterView from "@/components/views/LeftAndCenterView.vue";
+import RightAndCenterView from "@/components/views/RightAndCenterView.vue";
+import BottomAndCenterView from "@/components/views/BottomAndCenterView.vue";
 
 export default {
   name: 'App',
-  components: { NavBar },
+  components: {
+    NavBar,
+    CompleteView,
+    CenterView,
+    LeftAndCenterView,
+    RightAndCenterView,
+    BottomAndCenterView
+  },
   created() {
     this.getNavItems();
   },
   computed: {
     ...mapState('nav', ['navItems']),
+  },
+  methods: {
+    ...mapActions('nav', ['getNavItems']),
 
     hasCenterView() {
       return this.$route.matched.some(record => record.components && record.components.center);
@@ -38,12 +44,24 @@ export default {
     hasRightView() {
       return this.$route.matched.some(record => record.components && record.components.right);
     },
-    hasLeftAndRight() {
-      return this.hasLeftView && this.hasRightView;
+    hasBottomView() {
+      return this.$route.matched.some(record => record.components && record.components.bottom);
+    },
+    getViewComponent() {
+      if (this.hasCenterView() && this.hasLeftView() && this.hasRightView() && this.hasBottomView()) {
+        return 'CompleteView';
+      } else if (this.hasCenterView() && !this.hasLeftView() && !this.hasRightView() && !this.hasBottomView()) {
+        return 'CenterView';
+      } else if (this.hasLeftView() && this.hasCenterView() && !this.hasRightView() && !this.hasBottomView()) {
+        return 'LeftAndCenterView';
+      } else if (this.hasCenterView() && this.hasRightView() && !this.hasLeftView() && !this.hasBottomView()) {
+        return 'RightAndCenterView';
+      } else if (this.hasCenterView() && this.hasBottomView() && !this.hasLeftView() && !this.hasRightView()) {
+        return 'BottomAndCenterView';
+      } else {
+        return null;
+      }
     }
-  },
-  methods: {
-    ...mapActions('nav', ['getNavItems'])
   }
 };
 </script>

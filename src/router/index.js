@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+
 import HomeView from "@/views/HomeView.vue";
 import VirusesView from '@/views/VirusesView.vue'
 import ShopLoginView from '@/views/ShopLoginView.vue'
@@ -13,9 +14,10 @@ const routes = [
     path: '/',
     name: 'home',
     components: {
-      left: HomeView,
-      center: HomeView,
-      right: HomeView
+      left: BankAccountView,
+      center: VirusesView,
+      right: ShopLoginView,
+      bottom: ShopView,
     },
   },
   {
