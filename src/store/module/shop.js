@@ -1,4 +1,4 @@
-import ShopService from '../services/shop.service'
+import ShopService from '@/services/shop.service'
 
 export default {
   namespaced: true,

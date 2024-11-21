@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from "@/views/HomeView.vue";
-import VirusesView from '../views/VirusesView.vue'
-import ShopLoginView from '../views/ShopLoginView.vue'
-import BankAccountView from '../views/BankAccountView.vue'
+import VirusesView from '@/views/VirusesView.vue'
+import ShopLoginView from '@/views/ShopLoginView.vue'
+import BankAccountView from '@/views/BankAccountView.vue'
 
 Vue.use(VueRouter)
 

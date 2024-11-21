@@ -1,4 +1,4 @@
-import BankAccountService from '../services/bankaccount.service'
+import BankAccountService from '@/services/bankaccount.service'
 
 export default {
   namespaced: true,
