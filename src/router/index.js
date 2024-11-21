@@ -11,7 +11,11 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    components: {
+      center: VirusesView,
+      left: BankAccountView,
+      right: ShopLoginView,
+    },
   },
   {
     path: '/shop/items',
