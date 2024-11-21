@@ -1,8 +1,8 @@
-let items = [
+let virus = [
     {
         "_id": "6476f0e1c7e21b2b33a35d78",
         "name": "variole",
-        "description": "variole",
+        "description": "Déscription variole",
         "links": ["https://fr.wikipedia.org/wiki/Variole"],
         "stock": 0,
         "wait": {"$date": "2023-05-31T07:01:53.733Z"},
@@ -14,7 +14,7 @@ let items = [
     {
         "_id": "6476f0e1c7e21b2b33a35d79",
         "name": "ebola",
-        "description": "ebola",
+        "description": "Déscription ebola",
         "links": ["https://fr.wikipedia.org/wiki/Virus_Ebola"],
         "stock": 0,
         "wait": {"$date": "2023-05-31T07:01:53.733Z"},
@@ -26,7 +26,7 @@ let items = [
     {
         "_id": "6476f0e1c7e21b2b33a35d6c",
         "name": "adeno",
-        "description": "adenovirus",
+        "description": "Déscription adenovirus",
         "links": ["https://fr.wikipedia.org/wiki/Adenoviridae"],
         "stock": 10,
         "wait": {"$date": "2023-05-31T07:01:53.73Z"},
@@ -42,7 +42,7 @@ let items = [
     {
         "_id": "6476f0e1c7e21b2b33a35d6f",
         "name": "covid",
-        "description": "covid 19",
+        "description": "Déscription covid 19",
         "links": ["https://fr.wikipedia.org/wiki/SARS-CoV-2"],
         "stock": 50,
         "wait": {"$date": "2023-05-31T07:01:53.732Z"},
@@ -58,7 +58,7 @@ let items = [
     {
         "_id": "6476f0e1c7e21b2b33a35d72",
         "name": "staphy",
-        "description": "staphylocoque",
+        "description": "Déscription staphylocoque",
         "links": ["https://fr.wikipedia.org/wiki/Staphylococcus"],
         "stock": 100,
         "wait": {"$date": "2023-05-31T07:01:53.732Z"},
@@ -74,7 +74,7 @@ let items = [
     {
         "_id": "6476f0e1c7e21b2b33a35d76",
         "name": "prion",
-        "description": "prion",
+        "description": "Déscription prion",
         "links": ["https://fr.wikipedia.org/wiki/Prion_(prot%C3%A9ine)"],
         "stock": 1,
         "wait": {"$date": "2023-05-31T07:01:53.733Z"},
@@ -236,7 +236,7 @@ let auctiontransactions = [
 ]
 
 module.exports = {
-    items,
+    items: virus,
     shopusers,
     bankaccounts,
     transactions,

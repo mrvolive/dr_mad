@@ -6,6 +6,7 @@
              :checked="checked[indexRow]"
              @click="$emit('checked-changed',indexRow)"
       >
+
       <span v-for="(field, indexCol) in fields" :key="indexCol">
         {{item[field]}}
       </span>
